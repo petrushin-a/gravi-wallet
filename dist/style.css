@@ -1,0 +1,35 @@
+body, .wrapper, .row {
+    display: flex;
+}
+body {
+    width: 240px;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper {
+    align-items: center;
+}
+.row {
+    justify-content: center;
+    align-items: center;
+}
+.copyright p{
+    margin: 0;
+    margin-top: 2px;
+    line-height: 16px;
+    
+}
+.icn16 {
+    width: 16px;
+    height: 16px;
+    padding-top: 2px;
+    margin-right: 2px;
+    display: flex;
+}
+i {
+    font-size: 8px;
+}
+#donate {
+    display: flex;
+    justify-content: flex-start;
+}
