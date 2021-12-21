@@ -49,7 +49,7 @@ function foundsChangeHref(){
 }
 
 function foundsMarkYourBlock(){
-    for (const a of document.querySelectorAll("a")) {
+    for (const a of document.querySelectorAll("td > a")) {
         if (a.textContent.includes(lw)) {
           a.setAttribute("style","color:#f00")
         }
