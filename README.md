@@ -11,7 +11,7 @@ Liittle hack for pool.gravitsapa.space
 
 Руководство по установке плагина:
 
-0. Скачать актуальную версию плагина  https://github.com/petrushin-a/gravi-wallet/build
+0. Скачать актуальную версию плагина  https://github.com/petrushin-a/gravi-wallet/raw/main/build/gravi-wal-plugin_v0.0.1.zip
 1. Распаковать в любую локальную папку
 2. В Chrome зайти в меню настроек и выбрать 'Дополнительные инструменты' - 'Расширения'
 3. Включить режим разработчика
