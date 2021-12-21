@@ -10,9 +10,6 @@ const statNavLink = document.querySelector('[href="https://pool.gravitsapa.space
 let lw = getLocalWallet()
 let tw = url.searchParams.get("tw")
 let currentPath = url.pathname
-
-
-
 //console.log("current path", currentPath)
 
 //console.log("lw ", lw)
@@ -68,8 +65,7 @@ function loadLocalWallet (){
 function setLocalWallet(w){
     localStorage.setItem("wal", w)
 
-
-    /*
+    /* 
     chrome.storage.local.set({wal: w}, function() {
         console.log('Value is set to ' + tw)
     }) */
@@ -77,15 +73,12 @@ function setLocalWallet(w){
 
 function getLocalWallet() {
     
-     return localStorage.getItem("wal")
-    
-    
+    return localStorage.getItem("wal")
     
     /*chrome.storage.local.get(['wal'], function (result) {
         console.log('Value in local.storage is ' + JSON.stringify(result.wal))
       })*/
 }
-
 
 function switchHref(wallet, ...args) {
     console.log(args)
