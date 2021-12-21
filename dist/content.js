@@ -13,14 +13,14 @@ let currentPath = url.pathname
 
 
 
-console.log("current path", currentPath)
+//console.log("current path", currentPath)
 
-console.log("lw ", lw)
-console.log("tw ", tw)
+//console.log("lw ", lw)
+//console.log("tw ", tw)
 
 const hasWallet = new Boolean( lw || tw )
 
-console.log("haswallet" ,hasWallet)
+//console.log("haswallet" ,hasWallet)
 
 if (tw) {
     setLocalWallet(tw)
@@ -37,6 +37,7 @@ if (tw) {
         break
         case "/founds":
             foundsChangeHref()
+            foundsMarkYourBlock()
         break
     }
 } 
@@ -48,6 +49,14 @@ function foundsChangeHref(){
         u.removeAttribute("target")
         u.setAttribute("href", "https://pool.gravitsapa.space/wallet?tw="+founderWallet )
     })
+}
+
+function foundsMarkYourBlock(){
+    for (const a of document.querySelectorAll("a")) {
+        if (a.textContent.includes(lw)) {
+          a.setAttribute("style","color:#f00")
+        }
+      }
 }
 
 function loadLocalWallet (){
