@@ -25,6 +25,7 @@ if (tw) {
 
 } else if (getLocalWallet()) {
     lw = getLocalWallet()
+    switchHref(lw, payoutNavLink, statNavLink)
     switch (currentPath){
         case "/payouts":
             loadLocalWallet()
@@ -81,7 +82,7 @@ function getLocalWallet() {
 }
 
 function switchHref(wallet, ...args) {
-    console.log(args)
+    //console.log(args)
     args.forEach(l => {
         var href=l.getAttribute("href") + "?tw=" + wallet
         l.setAttribute("href", href)
