@@ -27,12 +27,13 @@ if (tw) {
     lw = getLocalWallet()
     switchHref(lw, payoutNavLink, statNavLink)
     switch (currentPath){
-        case "/payouts":
+        // ** deprecated since 0.0.3
+        /*case "/payouts":
             loadLocalWallet()
         break
         case "/wallet":
             loadLocalWallet()
-        break
+        break*/
         case "/founds":
             foundsChangeHref()
             foundsMarkYourBlock()
@@ -56,12 +57,12 @@ function foundsMarkYourBlock(){
         }
       }
 }
-
-function loadLocalWallet (){
-    if (window.confirm("Перейти в сохраненный кошелек?")) {
-        window.location.href = url_string +"?tw="+ lw;
-    }
-}
+// ** deprecated since 0.0.3
+//function loadLocalWallet (){
+//    if (window.confirm("Перейти в сохраненный кошелек?")) {
+//       window.location.href = url_string +"?tw="+ lw;
+//   }
+//}
 
 function setLocalWallet(w){
     localStorage.setItem("wal", w)
