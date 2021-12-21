@@ -1,9 +1,9 @@
 {
   "name": "Gravi wallet hack",
   "description": "Simple hack to save the time",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 3,
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs","notifications"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -19,13 +19,18 @@
     "48": "/img/48.png",
     "128": "/img/128.png"
   },
+  "web_accessible_resources": [
+    {
+      "resources": ["/audio/block.ogg", "/audio/250ms.mp3"],
+      "matches": [ "https://*.gravitsapa.space/*" ]
+    }
+  ],
   "content_scripts": [
     {
       "matches": ["https://*.gravitsapa.space/*"],
       "js": ["content.js"]
     }
   ]
-  
 }
 
 

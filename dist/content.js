@@ -1,39 +1,32 @@
-
-
-
 const url_string = window.location.href
 const url = new URL(url_string)
 
 const payoutNavLink = document.querySelector('[href="https://pool.gravitsapa.space/payouts"]')
 const statNavLink = document.querySelector('[href="https://pool.gravitsapa.space/wallet"]') 
+const pageDOM = document.getElementsByTagName("main")[0]
 
 let lw = getLocalWallet()
 let tw = url.searchParams.get("tw")
 let currentPath = url.pathname
 //console.log("current path", currentPath)
-
 //console.log("lw ", lw)
 //console.log("tw ", tw)
-
-const hasWallet = new Boolean( lw || tw )
-
-//console.log("haswallet" ,hasWallet)
 
 if (tw) {
     setLocalWallet(tw)
     switchHref(tw, payoutNavLink, statNavLink)
+    if (currentPath == "/wallet"){
+        checkNewBlockFound()
+    }
 
 } else if (getLocalWallet()) {
     lw = getLocalWallet()
     switchHref(lw, payoutNavLink, statNavLink)
     switch (currentPath){
-        // ** deprecated since 0.0.3
-        /*case "/payouts":
-            loadLocalWallet()
-        break
         case "/wallet":
-            loadLocalWallet()
-        break*/
+            alert("w")
+            checkNewBlockFound()
+        break
         case "/founds":
             foundsChangeHref()
             foundsMarkYourBlock()
@@ -57,38 +50,71 @@ function foundsMarkYourBlock(){
         }
       }
 }
-// ** deprecated since 0.0.3
-//function loadLocalWallet (){
-//    if (window.confirm("Перейти в сохраненный кошелек?")) {
-//       window.location.href = url_string +"?tw="+ lw;
-//   }
-//}
 
 function setLocalWallet(w){
     localStorage.setItem("wal", w)
-
-    /* 
-    chrome.storage.local.set({wal: w}, function() {
-        console.log('Value is set to ' + tw)
-    }) */
 }
 
 function getLocalWallet() {
-    
     return localStorage.getItem("wal")
-    
-    /*chrome.storage.local.get(['wal'], function (result) {
-        console.log('Value in local.storage is ' + JSON.stringify(result.wal))
-      })*/
 }
 
 function switchHref(wallet, ...args) {
-    //console.log(args)
     args.forEach(l => {
         var href=l.getAttribute("href") + "?tw=" + wallet
         l.setAttribute("href", href)
     });
 }
+
+function getStoredBalance(){
+    const gBalance = localStorage.getItem("g_balance")
+    //console.log("got - gbalance - ", gBalance)
+    return gBalance
+  }
+  
+function storeCurrentBalance(currentBalance){
+    localStorage.setItem("g_balance", currentBalance)  
+    //console.log("stored - gbalance - ", currentBalance)
+}
+
+
+function checkNewBlockFound(){
+    const storB = getStoredBalance();
+    const curB =  currentPoolBalance = Number(document.getElementById("pool_balance").textContent.trim())
+    const dif = curB - storB
+    if (!storB) {
+        storeCurrentBalance(curB)
+    }
+    else if ( dif > 1) {
+        newBlockNotification()
+    }
+}
+
+function newBlockNotification() {
+    // Проверка поддержки браузером уведомлений
+    if (!("Notification" in window)) {
+      alert("This browser does not support desktop notification");
+    }
+  
+    // Проверка разрешения на отправку уведомлений
+    else if (Notification.permission === "granted") {
+      // Если разрешено, то создаём уведомление
+      var notification = new Notification("Hi there!");
+    }
+  
+    // В противном случае, запрашиваем разрешение
+    else if (Notification.permission !== 'denied') {
+      Notification.requestPermission(function (permission) {
+        // Если пользователь разрешил, то создаём уведомление
+        if (permission === "granted") {
+          var notification = new Notification("New block found!");
+        }
+      });
+    }
+    // В конечном счёте, если пользователь отказался от получения
+    // уведомлений, то стоит уважать его выбор и не беспокоить его
+    // по этому поводу.
+  }
 
 
 
