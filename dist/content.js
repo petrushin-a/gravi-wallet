@@ -8,6 +8,8 @@ const pageDOM = document.getElementsByTagName("main")[0]
 let lw = getLocalWallet()
 let tw = url.searchParams.get("tw")
 let currentPath = url.pathname
+
+var currentPoolBalance = 0
 //console.log("current path", currentPath)
 //console.log("lw ", lw)
 //console.log("tw ", tw)
@@ -15,18 +17,18 @@ let currentPath = url.pathname
 if (tw) {
     setLocalWallet(tw)
     switchHref(tw, payoutNavLink, statNavLink)
-    if (currentPath == "/wallet"){
-        checkNewBlockFound()
-    }
+        if (currentPath == "/wallet"){
+            checkNewBlockFound()
+        }
 
-} else if (getLocalWallet()) {
+    } else if (getLocalWallet()) {
     lw = getLocalWallet()
     switchHref(lw, payoutNavLink, statNavLink)
     switch (currentPath){
         case "/wallet":
-            alert("w")
+            //alert("w")
             checkNewBlockFound()
-        break
+        //break
         case "/founds":
             foundsChangeHref()
             foundsMarkYourBlock()
@@ -79,15 +81,19 @@ function storeCurrentBalance(currentBalance){
 
 
 function checkNewBlockFound(){
-    const storB = getStoredBalance();
-    const curB =  currentPoolBalance = Number(document.getElementById("pool_balance").textContent.trim())
-    const dif = curB - storB
-    if (!storB) {
-        storeCurrentBalance(curB)
-    }
-    else if ( dif > 1) {
-        newBlockNotification()
-    }
+
+    setTimeout(() => {
+        currentPoolBalance = document.getElementById('pool_balance').textContent.trim()
+        const storedBalance = getStoredBalance()
+        const dif = currentPoolBalance - storedBalance 
+            if (!storedBalance) {
+                storeCurrentBalance(currentPoolBalance)
+            }
+            else if ( dif > 1) {
+                newBlockNotification()
+            }
+        localStorage.setItem("g_balance", currentPoolBalance)  
+    }, 1000);
 }
 
 function newBlockNotification() {
@@ -99,7 +105,7 @@ function newBlockNotification() {
     // Проверка разрешения на отправку уведомлений
     else if (Notification.permission === "granted") {
       // Если разрешено, то создаём уведомление
-      var notification = new Notification("Hi there!");
+      var notification = new Notification("New block!");
     }
   
     // В противном случае, запрашиваем разрешение
