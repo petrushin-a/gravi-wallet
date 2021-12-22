@@ -64,9 +64,9 @@ const gpuHasrateData = {
 }
 
 const currentAvgProfitGhs = Number(document.getElementById('avgProfitPerGHS1USD').textContent)
-console.log("Current AVG", currentAvgProfitGhs)
+//console.log("Current AVG", currentAvgProfitGhs)
 const prevAvgProfitGhs = Number(document.getElementById('avgProfitPerGHS1USDinDay').textContent)
-console.log("Previous AVG", prevAvgProfitGhs)
+//console.log("Previous AVG", prevAvgProfitGhs)
 
 
 
@@ -223,7 +223,7 @@ function getTotalHashrate() {
         var hashrate = item.options[item.value].getAttribute('hashrate')
         gpuHashrates.push(hashrate)
     }
-    console.log("GPU hasrates :", gpuHashrates)
+    //console.log("GPU hasrates :", gpuHashrates)
     
    
    
@@ -233,7 +233,7 @@ function getTotalHashrate() {
     for (let item of gpuQuantity){
         gpuQuantities.push(item.value)
     }
-    console.log("GPU quantities :", gpuQuantities)   
+    //console.log("GPU quantities :", gpuQuantities)   
     
     
 // -- Total hashrate calc
