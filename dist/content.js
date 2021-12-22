@@ -9,7 +9,7 @@ let lw = getLocalWallet()
 let tw = url.searchParams.get("tw")
 let currentPath = url.pathname
 
-var currentPoolBalance = 0
+var currentPoolBalance = null
 //console.log("current path", currentPath)
 //console.log("lw ", lw)
 //console.log("tw ", tw)
@@ -84,14 +84,19 @@ function checkNewBlockFound(){
 
     setTimeout(() => {
         currentPoolBalance = document.getElementById('pool_balance').textContent.trim()
-        const storedBalance = getStoredBalance()
-        const dif = currentPoolBalance - storedBalance 
-            if (!storedBalance) {
-                storeCurrentBalance(currentPoolBalance)
-            }
-            else if ( dif > 1) {
-                newBlockNotification()
-            }
+        if (currentPoolBalance != 0){
+            const storedBalance = getStoredBalance()
+            const dif = currentPoolBalance - storedBalance 
+                if (!storedBalance) {
+                    storeCurrentBalance(currentPoolBalance)
+                }
+                else if ( dif > 1) {
+                    newBlockNotification()
+                }
+        } else {
+            location.reload()
+        }
+        
         localStorage.setItem("g_balance", currentPoolBalance)  
     }, 1000);
 }
