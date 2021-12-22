@@ -1,0 +1,12 @@
+.gpu-select {
+    margin-right: 10px;
+}
+.input-group-text {
+    width: 100%;
+}
+.totals {
+    margin-top:3rem !important;
+}/*
+#calcCurrent::before, #calcAverage::before{
+    content: '$';
+}*/
