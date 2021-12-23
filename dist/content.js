@@ -50,7 +50,7 @@ function foundsChangeHref(){
 function foundsMarkYourBlock(){
     for (const a of document.querySelectorAll("td > a")) {
         if (a.textContent.includes(lw)) {
-          a.setAttribute("style","color:#f00")
+          a.setAttribute("style","color:#85f1a1")
         }
       }
 }
@@ -229,6 +229,16 @@ addStyle(`
 addStyle(`
     #totalProfit {
         background-color:#8761a5 !important;
+    }
+`)
+addStyle(`
+    a {
+        color: #95a7c1;
+        transition: all .2s ease;
+    }
+    a:hover {
+        color: #deebfd;
+
     }
 `)
 
