@@ -159,6 +159,9 @@ addStyle(`
     .navbar-light .navbar-brand {
         color: rgb(183 183 183 / 90%);
     }
+    .navbar-light .navbar-brand:hover {
+        color: #fff !important;
+    }
 `)
 
 addStyle(`
@@ -169,6 +172,9 @@ addStyle(`
 addStyle(`
     .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
         color: rgb(255 255 255 / 90%);
+    }
+    .navbar-light .nav-link:hover {
+        color: #fff !important;
     }
 `)
 addStyle(`
@@ -205,6 +211,24 @@ addStyle(`
 addStyle(`
     #tw {
         background-color:#ddd;
+    }
+`)
+addStyle(`
+    .dataTables_wrapper .dataTables_length {
+        color: #c7c7c7;
+    }
+`)
+addStyle(`
+    select, input {
+        background-color: #ddd !important;
+    }
+    label {
+        color: #c7c7c7 !important;
+    }
+`)
+addStyle(`
+    #totalProfit {
+        background-color:#8761a5 !important;
     }
 `)
 

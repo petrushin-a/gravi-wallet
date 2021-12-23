@@ -1,7 +1,7 @@
 {
   "name": "Gravi wallet hack",
   "description": "Simple hack to save the time",
-  "version": "0.0.5a",
+  "version": "0.0.5.1",
   "manifest_version": 3,
   "permissions": ["storage", "tabs","notifications"],
   "action": {
