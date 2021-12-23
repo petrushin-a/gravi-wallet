@@ -1,7 +1,7 @@
 {
   "name": "Gravi wallet hack",
   "description": "Simple hack to save the time",
-  "version": "0.0.5",
+  "version": "0.0.5a",
   "manifest_version": 3,
   "permissions": ["storage", "tabs","notifications"],
   "action": {
@@ -28,8 +28,17 @@
   "content_scripts": [
     {
       "matches": ["https://*.gravitsapa.space/*"],
-      "js": ["content.js","calc.js"],
+      "js": ["content.js"]
+    },
+    {
+      "matches": ["https://pool.gravitsapa.space/wallet*"],
+      "js": ["calc.js"],
       "css": ["style_scripts.css"]
+    },
+    {
+      "matches": ["https://pool.gravitsapa.space/payouts*"],
+      "js": ["stats.js"],
+      "css": ["stats_scripts.css"]
     }
   ]
 }

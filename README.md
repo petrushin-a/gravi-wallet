@@ -30,6 +30,9 @@ Liittle hack for pool.gravitsapa.space
 - Добавлено уведомление о новом блоке (разрешите уведомления chrome)
   https://support.google.com/chrome/answer/3220216?hl=ru&co=GENIE.Platform%3DDesktop
 
+### V.0.0.5a
+- Dark mode на скорую руку, потому, что вечерело...
+
 - Добавлен калькулятор доходности
 
 Всем дохода! enjoy ;)
