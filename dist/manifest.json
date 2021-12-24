@@ -34,11 +34,6 @@
       "matches": ["https://pool.gravitsapa.space/wallet*"],
       "js": ["calc.js"],
       "css": ["style_scripts.css"]
-    },
-    {
-      "matches": ["https://pool.gravitsapa.space/payouts*"],
-      "js": ["stats.js"],
-      "css": ["stats_scripts.css"]
     }
   ]
 }
