@@ -36,6 +36,9 @@ function checkNewBlockFound(){
             newBlockNotification()
             storeCurrentBalance(currentPoolBalance)
         }
+        else {
+            storeCurrentBalance(currentPoolBalance)
+        }
     }
 }
 
