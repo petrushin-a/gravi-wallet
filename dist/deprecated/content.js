@@ -211,6 +211,8 @@ addStyle(`
 addStyle(`
     #tw {
         background-color:#ddd;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
     }
 `)
 addStyle(`
@@ -241,8 +243,28 @@ addStyle(`
 
     }
 `)
+addStyle(`
+    .border-light {
+        border-color: #7bbdff!important;
+    }
+    .input-group-text {
+       
+        border: 1px solid #7bbdff!importants;
+        border-bottom-ledft-radius:0;
+        border-bottom-right-radius:0;
+    }
+`)
+addStyle(`
+    .bg-success {
+        background-color: #56a17e!important;
+    }
+    .btn-primary {
+        background-color: #1b3964 !important;
+        transition: all .2s ease;
+    }
+    .btn-primary:hover {
+        background-color: #37598d !important;
+    }
+`)
 
 
-
-
-  
