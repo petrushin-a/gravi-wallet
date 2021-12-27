@@ -11,7 +11,7 @@ Liittle hack for pool.gravitsapa.space
 
 Руководство по установке плагина:
 
-0. Скачать актуальную версию плагина  https://github.com/petrushin-a/gravi-wallet/raw/main/build/gravi-wal-plugin_v0.0.5a.zip
+0. Скачать актуальную версию плагина  https://github.com/petrushin-a/gravi-wallet/raw/main/build/gravi-wal-plugin_v0.1.zip
 1. Распаковать в любую локальную папку
 2. В Chrome зайти в меню настроек и выбрать 'Дополнительные инструменты' - 'Расширения'
 3. Включить режим разработчика
@@ -32,7 +32,13 @@ Liittle hack for pool.gravitsapa.space
 
 ### V.0.0.5a
 - Dark mode на скорую руку, потому, что вечерело...
-
 - Добавлен калькулятор доходности
 
+### V.0.1
+Отрефакторил...
+
+- Баланс кошелька берем теперь из API TON network
+- Уведомление о новых блоках появляется теперь на любой странице домена gravitsapa.space
+
 Всем дохода! enjoy ;)
+
