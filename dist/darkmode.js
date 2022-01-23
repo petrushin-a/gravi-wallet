@@ -19,7 +19,7 @@ addStyle(`
 
 addStyle(`
     .bg-light {
-        background-color: #272534 !important;
+        background-color: #403b37 !important;
     }
 `)
 
@@ -52,7 +52,7 @@ addStyle(`
 `)
 addStyle(`
 table.dataTable tbody tr {
-    background-color: #2e2e32;
+    background-color: #403b37;
     color: white;
 }
 `)
@@ -98,7 +98,7 @@ addStyle(`
 `)
 addStyle(`
     #totalProfit {
-        background-color:#8761a5 !important;
+        background-color:#cb9d1d !important;
     }
 `)
 addStyle(`
@@ -133,6 +133,19 @@ addStyle(`
     .btn-primary:hover {
         background-color: #37598d !important;
     }
+    .btn-outline-primary {
+        color: #cb9d1d;
+        border-color: #cb9d1d;
+    }
+    .btn-outline-primary:hover {
+        background-color: #cb9d1d;
+        border-color: #cb9d1d;
+    }
+
+`)
+addStyle(`
+.badge.bg-success {
+}
 `)
 
 

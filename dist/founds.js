@@ -4,7 +4,8 @@ function foundsChangeHref(){
     foundsLinks.forEach(u => {
         var founderWallet = u.textContent.trim()
         var graviFounderUrl = 'https://pool.gravitsapa.space/wallet?tw=' + founderWallet
-        u.innerHTML=`<a href="${graviFounderUrl}">${founderWallet}</a>`
+        var tonShFounderUrl = 'https://ton.sh/address/' + founderWallet
+        u.innerHTML=`<a href="${tonShFounderUrl}"  class="diamondlink" target="_blank" title="Explore wallet on Ton.sh">💎</a> <a href="${graviFounderUrl}" title="Go to wallet">${founderWallet}</a>`
     })
 }
 

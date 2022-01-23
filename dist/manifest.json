@@ -22,11 +22,13 @@
   "content_scripts": [
     {
       "matches": ["https://*.gravitsapa.space/*"],
-      "js": ["common.js","newblock.js","darkmode.js"]
+      "js": ["common.js","newblock.js","darkmode.js"],
+      "css":["font.css"]
     },
     {
       "matches": ["https://pool.gravitsapa.space/founds*"],
-      "js": ["founds.js"]
+      "js": ["founds.js"],
+      "css":["founds.css"]
     }
   ]
 }
